@@ -31,16 +31,11 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+    Text(text = "Hello $name!", modifier = modifier)
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    ElegantSplashComposeTheme {
-        Greeting("Android")
-    }
+    ElegantSplashComposeTheme { Greeting("Android") }
 }

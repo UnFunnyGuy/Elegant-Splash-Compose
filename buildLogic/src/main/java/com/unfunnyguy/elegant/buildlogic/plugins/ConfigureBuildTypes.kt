@@ -4,7 +4,6 @@ import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 
 internal fun BaseAppModuleExtension.configureBuildTypes() {
     buildTypes {
-
         debug {
             applicationIdSuffix = ".debug"
             isMinifyEnabled = false
@@ -21,6 +20,5 @@ internal fun BaseAppModuleExtension.configureBuildTypes() {
                 "proguard-rules.pro"
             )
         }
-
     }
 }

@@ -13,11 +13,8 @@ class ApplicationPlugin : Plugin<Project> {
             }
             configureApplication()
         }
-
     }
-
 }
-
 
 object BuildConfig {
     const val compileSdkVersionInt = 33

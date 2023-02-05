@@ -6,14 +6,13 @@ import com.unfunnyguy.elegant.buildlogic.plugins.utils.kapt
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-abstract class HiltPlugin  : Plugin<Project> {
+abstract class HiltPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
                 apply("org.jetbrains.kotlin.kapt")
                 apply("dagger.hilt.android.plugin")
             }
-
 
             dependenciesWrap()
             /*dependencies {
@@ -24,11 +23,11 @@ abstract class HiltPlugin  : Plugin<Project> {
         }
     }
 
-    open fun Project.dependenciesWrap(){
-        dependencyWrap{
+    open fun Project.dependenciesWrap() {
+        dependencyWrap {
             implementation("hilt.android")
             kapt("hilt.compiler")
-            //add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
+            // add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
         }
     }
 }

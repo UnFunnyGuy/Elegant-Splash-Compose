@@ -31,7 +31,5 @@ internal fun Project.configureApplication() {
         configureCompose(this)
 
         kotlinOptions { jvmTarget = JavaVersion.VERSION_1_8.toString() }
-
-
     }
 }

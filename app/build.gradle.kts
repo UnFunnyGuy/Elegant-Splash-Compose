@@ -1,6 +1,6 @@
 plugins {
-    id ("elegant.application")
-    id ("elegant.hilt.nav")
+    id("elegant.application")
+    id("elegant.hilt.nav")
 }
 
 kotlin {
@@ -10,9 +10,7 @@ kotlin {
     }
 }
 
-
 dependencies {
-
     implementation(project(":core:network"))
 
     implementation(libs.androidx.core.ktx)

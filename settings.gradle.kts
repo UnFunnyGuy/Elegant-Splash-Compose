@@ -6,15 +6,20 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
     repositories {
         google()
-        maven ("https://jitpack.io")
+        maven("https://jitpack.io")
         mavenCentral()
     }
 }
-rootProject.name = "Elegant Splash Compose"
-include (":app")
-include(":core:network")
 
+rootProject.name = "Elegant Splash Compose"
+
+include(":app")
+
+include(
+    ":core:network"
+)
