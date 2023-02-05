@@ -15,3 +15,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Elegant Splash Compose"
 include (":app")
+include(":core:network")
+
