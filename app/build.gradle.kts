@@ -1,6 +1,6 @@
 plugins {
-    id ("com.android.application")
-    id ("org.jetbrains.kotlin.android")
+    id ("elegant.application")
+    id ("elegant.hilt.nav")
 }
 
 kotlin {
@@ -10,52 +10,11 @@ kotlin {
     }
 }
 
-android {
-    namespace = "com.unfunnyguy.elegant"
-    compileSdk = 33
-
-    defaultConfig {
-        applicationId = "com.unfunnyguy.elegant"
-        minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName  ="1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
-    }
-
-    buildTypes {
-
-        getByName("release"){
-            isMinifyEnabled = true
-            proguardFiles (getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.0"
-    }
-    packagingOptions {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
-}
 
 dependencies {
+
+    implementation(project(":core:network"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.lifecycle.runtimeCompose)
     implementation(libs.androidx.activity.compose)
