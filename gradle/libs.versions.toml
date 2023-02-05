@@ -141,7 +141,7 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 test-core = { group = "androidx.test", name = "core", version.ref = "androidxTestCore" }
 test-ext = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidxTestExt" }
 test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
-test-junit = { group = "junit", name = ":junit", version.ref = "junit4" }
+test-junit = { group = "junit", name = "junit", version.ref = "junit4" }
 test-runner = { group = "androidx.test", name = "runner", version.ref = "androidxTestRunner" }
 test-rules = { group = "androidx.test", name = "rules", version.ref = "androidxTestRules" }
 test-uiautomator = { group = "androidx.test.uiautomator", name = "uiautomator", version.ref = "androidxUiAutomator" }
