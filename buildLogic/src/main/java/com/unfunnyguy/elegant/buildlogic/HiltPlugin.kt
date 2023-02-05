@@ -6,7 +6,7 @@ import com.unfunnyguy.elegant.buildlogic.plugins.utils.kapt
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-abstract class HiltPlugin : Plugin<Project> {
+open class HiltPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
