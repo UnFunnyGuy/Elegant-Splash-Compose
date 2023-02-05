@@ -15,11 +15,6 @@ open class HiltPlugin : Plugin<Project> {
             }
 
             dependenciesWrap()
-            /*dependencies {
-                implementation("hilt.android")
-                kapt("hilt.compiler")
-                add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
-            }*/
         }
     }
 
@@ -27,7 +22,6 @@ open class HiltPlugin : Plugin<Project> {
         dependencyWrap {
             implementation("hilt.android")
             kapt("hilt.compiler")
-            // add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
         }
     }
 }
