@@ -10,12 +10,17 @@ kotlin {
     }
 }
 
+
 dependencies {
-    implementation(project(":core:network"))
+    implementation(project(":core:domain"))
+    implementation(project(":core:data"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.lifecycle.runtimeCompose)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.paging.runtime)
+    implementation(libs.androidx.paging.compose)
+    implementation(libs.coil.kt.compose)
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.graphics)
     implementation(libs.compose.ui.tooling.preview)
@@ -26,4 +31,8 @@ dependencies {
     androidTestImplementation(libs.compose.ui.test)
     debugImplementation(libs.compose.ui.tooling)
     debugImplementation(libs.compose.ui.testManifest)
+
+    implementation(project(":core:model"))
+
+
 }

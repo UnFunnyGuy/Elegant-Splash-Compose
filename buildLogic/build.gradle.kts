@@ -31,5 +31,9 @@ gradlePlugin {
             id = "$basePluginName.hilt.nav"
             implementationClass = "$basePluginPackageName.HiltNavPlugin"
         }
+        register("build-config-plugin") {
+            id = "$basePluginName.buildConfig"
+            implementationClass = "$basePluginPackageName.BuildConfigPlugin"
+        }
     }
 }

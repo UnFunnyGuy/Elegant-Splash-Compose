@@ -7,6 +7,7 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.api.plugins.ExtensionAware
 import org.gradle.kotlin.dsl.configure
+import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
 internal fun Project.configureLibrary() {
@@ -21,8 +22,17 @@ internal fun Project.configureLibrary() {
             sourceCompatibility = JavaVersion.VERSION_1_8
             targetCompatibility = JavaVersion.VERSION_1_8
         }
-        kotlinOptions { jvmTarget = JavaVersion.VERSION_1_8.toString() }
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_1_8.toString()
+
+        }
+
     }
+
+    extensions.configure<KotlinAndroidProjectExtension>{
+        jvmToolchain(8)
+    }
+
 }
 
 fun CommonExtension<*, *, *, *>.kotlinOptions(block: KotlinJvmOptions.() -> Unit) {

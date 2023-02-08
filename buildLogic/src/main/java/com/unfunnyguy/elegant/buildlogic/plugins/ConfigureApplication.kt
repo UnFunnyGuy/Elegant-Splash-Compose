@@ -5,6 +5,7 @@ import com.unfunnyguy.elegant.buildlogic.BuildConfig
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
+import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
 internal fun Project.configureApplication() {
 
@@ -31,5 +32,9 @@ internal fun Project.configureApplication() {
         configureCompose(this)
 
         kotlinOptions { jvmTarget = JavaVersion.VERSION_1_8.toString() }
+    }
+
+    extensions.configure<KotlinAndroidProjectExtension>{
+        jvmToolchain(8)
     }
 }
