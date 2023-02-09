@@ -21,6 +21,7 @@ rootProject.name = "Elegant Splash Compose"
 include(":app")
 
 include(":core:network")
-include(":core:model")
 include(":core:domain")
 include(":core:data")
+include(":core:model:domain")
+include(":core:model:network")

@@ -1,13 +1,13 @@
 package com.unfunnyguy.core.data.mapper
 
-import com.unfunnyguy.core.domain.model.photo.Photo
-import com.unfunnyguy.core.domain.model.photo.Urls
-import com.unfunnyguy.core.domain.model.user.ProfileImage
-import com.unfunnyguy.core.domain.model.user.User
-import com.unfunnyguy.elegant.core.network.model.photo.PhotoDto
-import com.unfunnyguy.elegant.core.network.model.photo.UrlsDto
-import com.unfunnyguy.elegant.core.network.model.user.ProfileImageDto
-import com.unfunnyguy.elegant.core.network.model.user.UserDto
+import com.unfunnyguy.elegant.core.model.domain.photo.Photo
+import com.unfunnyguy.elegant.core.model.domain.photo.Urls
+import com.unfunnyguy.elegant.core.model.domain.user.ProfileImage
+import com.unfunnyguy.elegant.core.model.domain.user.User
+import com.unfunnyguy.elegant.core.model.network.photo.PhotoDto
+import com.unfunnyguy.elegant.core.model.network.photo.UrlsDto
+import com.unfunnyguy.elegant.core.model.user.ProfileImageDto
+import com.unfunnyguy.elegant.core.model.user.UserDto
 
 fun PhotoDto.toPhoto(): Photo {
     return Photo(

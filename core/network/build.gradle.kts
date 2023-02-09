@@ -8,7 +8,7 @@ plugins {
 android.namespace = "com.unfunnyguy.elegant.core.network"
 
 dependencies {
-    implementation(project(":core:model"))
+    api(project(":core:model:network"))
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
     implementation(libs.okhttp)

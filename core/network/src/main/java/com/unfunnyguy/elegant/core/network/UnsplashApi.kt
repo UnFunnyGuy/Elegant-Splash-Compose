@@ -1,6 +1,6 @@
 package com.unfunnyguy.elegant.core.network
 
-import com.unfunnyguy.elegant.core.network.model.photo.PhotoDto
+import com.unfunnyguy.elegant.core.model.network.photo.PhotoDto
 import retrofit2.http.GET
 import retrofit2.http.Query
 
