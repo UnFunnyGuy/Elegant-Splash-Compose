@@ -23,6 +23,10 @@ gradlePlugin {
             id = "$basePluginName.library"
             implementationClass = "$basePluginPackageName.LibraryPlugin"
         }
+        register("compose-library-plugin") {
+            id = "$basePluginName.compose"
+            implementationClass = "$basePluginPackageName.ComposePlugin"
+        }
         register("hilt-plugin") {
             id = "$basePluginName.hilt"
             implementationClass = "$basePluginPackageName.HiltPlugin"
