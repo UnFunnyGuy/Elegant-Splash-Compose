@@ -12,4 +12,11 @@ interface UnsplashApi {
         @Query("per_page") pageLimit: Int,
     ): List<PhotoDto>
 
+    @GET("photos")
+    suspend fun getNormalPhotos(
+        @Query("page") page: Int,
+        @Query("per_page") pageLimit: Int,
+        @Query("order_by") orderBy: String = "latest",
+    ): List<PhotoDto>
+
 }
