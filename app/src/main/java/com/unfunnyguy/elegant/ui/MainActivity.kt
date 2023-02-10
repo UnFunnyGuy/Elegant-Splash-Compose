@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ElegantSplashComposeTheme {
-                // A surface container using the 'background' color from the theme
+
                 val viewModel = hiltViewModel<MainViewModel>()
 
                 val walls = viewModel.getCuratedWalls().collectAsLazyPagingItems()
@@ -50,12 +50,11 @@ class MainActivity : ComponentActivity() {
                         Divider()
                     }
 
-                    when (val state = walls.loadState.refresh) { // FIRST LAD
+                    when (val state = walls.loadState.refresh) {
                        is LoadState.Error -> {
-                            // TODO Error Item
-                            // state.error to get error message
+
                         }
-                        is LoadState.Loading -> { // Loading UI
+                        is LoadState.Loading -> {
                             item {
                                 Column(
                                     modifier = Modifier.fillParentMaxSize(),
@@ -74,10 +73,9 @@ class MainActivity : ComponentActivity() {
                         else -> {}
                     }
 
-                    when (val state = walls.loadState.append) { // Pagination
+                    when (val state = walls.loadState.append) {
                         is LoadState.Error -> {
-                            // TODO Pagination Error Item
-                            // state.error to get error message
+                            
                         }
                         is LoadState.Loading -> { // Pagination Loading UI
                             item {
