@@ -14,7 +14,18 @@ class UnsplashRepositoryImpl @Inject constructor(private val apiService :Unsplas
         config = PagingConfig(30),
         pagingSourceFactory = {
             ElegantPagingSource{ page ->
-                apiService.getCuratedWalls(page, pageLimit = 30).map {
+                apiService.getCuratedWalls(page).map {
+                    it.toPhoto()
+                }
+            }
+        }
+    ).flow
+
+    override fun getNormalWalls()= Pager(
+        config = PagingConfig(30),
+        pagingSourceFactory = {
+            ElegantPagingSource{ page ->
+                apiService.getNormalWalls(page).map {
                     it.toPhoto()
                 }
             }

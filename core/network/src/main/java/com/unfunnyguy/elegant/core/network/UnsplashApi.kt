@@ -9,13 +9,13 @@ interface UnsplashApi {
     @GET("users/unfunnyguy/likes")
     suspend fun getCuratedWalls(
         @Query("page") page: Int,
-        @Query("per_page") pageLimit: Int,
+        @Query("per_page") pageLimit: Int = 30,
     ): List<PhotoDto>
 
     @GET("photos")
-    suspend fun getNormalPhotos(
+    suspend fun getNormalWalls(
         @Query("page") page: Int,
-        @Query("per_page") pageLimit: Int,
+        @Query("per_page") pageLimit: Int = 30,
         @Query("order_by") orderBy: String = "latest",
     ): List<PhotoDto>
 
