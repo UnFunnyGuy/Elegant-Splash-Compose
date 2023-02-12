@@ -19,12 +19,12 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.pagerTabIndicatorOffset
 import com.google.accompanist.pager.rememberPagerState
-import com.unfunnyguy.elegant.core.ui.TabsItem
+import com.unfunnyguy.elegant.core.ui.TabItem
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun TabLayout(tabsItems: List<TabsItem>) {
+fun TabLayout(tabItems: List<TabItem>) {
     //TODO: Use dimens
     val pagerState = rememberPagerState()
     val scope = rememberCoroutineScope()
@@ -45,13 +45,13 @@ fun TabLayout(tabsItems: List<TabsItem>) {
             },
             modifier = Modifier.fillMaxWidth().wrapContentHeight()
         ) {
-            tabsItems.forEachIndexed { index, _ ->
+            tabItems.forEachIndexed { index, _ ->
                 Tab(
                     selected = pagerState.currentPage == index,
                     onClick = { scope.launch { pagerState.animateScrollToPage(index) } },
                     text = {
                         Text(
-                            text = tabsItems[index].title,
+                            text = tabItems[index].title,
                             color =
                             if (pagerState.currentPage == index) {
                                 MaterialTheme.colorScheme.primary
@@ -63,9 +63,9 @@ fun TabLayout(tabsItems: List<TabsItem>) {
         }
 
         HorizontalPager(
-            count = tabsItems.size, state = pagerState
+            count = tabItems.size, state = pagerState
         ) { index ->
-            tabsItems[index].screen()
+            tabItems[index].screen()
         }
     }
 }
