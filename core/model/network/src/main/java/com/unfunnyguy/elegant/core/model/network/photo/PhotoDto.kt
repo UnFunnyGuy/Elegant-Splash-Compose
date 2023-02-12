@@ -13,7 +13,7 @@ data class PhotoDto(
     val height: Int?,
     val id: String,
     val likes: Int?,
-    val sponsorship: String?,
+    val sponsorship: Any?,
     val urls: UrlsDto,
     val user: UserDto,
     val width: Int

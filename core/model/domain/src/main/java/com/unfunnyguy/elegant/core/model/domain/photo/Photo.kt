@@ -10,7 +10,7 @@ data class Photo(
     val height: Int?,
     val id: String,
     val likes: Int?,
-    val sponsorship: String?,
+    val sponsorship: Boolean = false,
     val urls: Urls,
     val user: User,
     val width: Int
