@@ -1,4 +1,4 @@
-package com.unfunnyguy.elegant.ui
+package com.unfunnyguy.elegant.ui.home.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,8 +11,12 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(private val useCases: UnsplashUseCases) : ViewModel() {
+class HomeViewModel @Inject constructor(private val useCases: UnsplashUseCases) : ViewModel() {
 
-     fun getCuratedWalls(): Flow<PagingData<Photo>> =
+
+    fun getCuratedWalls(): Flow<PagingData<Photo>> =
         useCases.getCuratedWalls().cachedIn(viewModelScope)
+
+    fun getNormalWalls(): Flow<PagingData<Photo>> =
+        useCases.getNormalWalls().cachedIn(viewModelScope)
 }

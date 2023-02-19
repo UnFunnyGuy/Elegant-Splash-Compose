@@ -18,7 +18,7 @@ fun PhotoDto.toPhoto(): Photo {
         height = this.height,
         id = this.id,
         likes = this.likes,
-        sponsorship = this.sponsorship,
+        sponsorship = this.sponsorship != null,
         urls = this.urls.toUrls(),
         user = this.user.toUser(),
         width = this.width

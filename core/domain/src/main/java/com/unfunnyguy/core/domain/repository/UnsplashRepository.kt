@@ -8,4 +8,6 @@ interface UnsplashRepository {
 
     fun getCuratedWalls(): Flow<PagingData<Photo>>
 
+    fun getNormalWalls(): Flow<PagingData<Photo>>
+
 }

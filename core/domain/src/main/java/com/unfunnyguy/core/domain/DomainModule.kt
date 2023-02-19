@@ -2,6 +2,7 @@ package com.unfunnyguy.core.domain
 
 import com.unfunnyguy.core.domain.repository.UnsplashRepository
 import com.unfunnyguy.core.domain.use_cases.GetCuratedWalls
+import com.unfunnyguy.core.domain.use_cases.GetNormalWalls
 import com.unfunnyguy.core.domain.use_cases.UnsplashUseCases
 import dagger.Module
 import dagger.Provides
@@ -16,5 +17,8 @@ object DomainModule {
     @Provides
     @Singleton
     fun providesUnsplashUseCases(repository: UnsplashRepository) =
-        UnsplashUseCases(getCuratedWalls = GetCuratedWalls(repository))
+        UnsplashUseCases(
+            getCuratedWalls = GetCuratedWalls(repository),
+            getNormalWalls = GetNormalWalls(repository)
+        )
 }

@@ -17,31 +17,34 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun providesUnsplashApi(): UnsplashApi =
-        Retrofit.Builder()
+    fun providesUnsplashApi(): UnsplashApi {
+        return Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_API_URL)
             .addConverterFactory(GsonConverterFactory.create())
-            .client(
-                OkHttpClient.Builder()
-                    .addInterceptor(
-                        HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC)
-                    )
-                    .addInterceptor(
-                        Interceptor { chain: Interceptor.Chain ->
-                            val request =
-                                chain
-                                    .request()
-                                    .newBuilder()
-                                    .addHeader(
-                                        "Authorization",
-                                        "Client-ID " + "ky1qNRQxgQc1ecl5i9BOSh8RCmpZMFXB5rxn1sMHECk"
-                                    )
-                                    .build()
-                            chain.proceed(request)
-                        }
-                    )
-                    .build()
-            )
+            .client(providesOkHttpClient())
             .build()
             .create(UnsplashApi::class.java)
+    }
+
+    private fun providesOkHttpClient(): OkHttpClient {
+        return OkHttpClient.Builder()
+            .addInterceptor(providesHttpLoggingInterceptor())
+            .addInterceptor(providesAuthorizationInterceptor())
+            .build()
+    }
+
+    private fun providesHttpLoggingInterceptor(): HttpLoggingInterceptor {
+        return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC)
+    }
+
+    private fun providesAuthorizationInterceptor(): Interceptor {
+        return Interceptor { chain: Interceptor.Chain ->
+            val request = chain.request()
+                .newBuilder()
+                .addHeader("Authorization", "Client-ID " + "ky1qNRQxgQc1ecl5i9BOSh8RCmpZMFXB5rxn1sMHECk")
+                .build()
+            chain.proceed(request)
+        }
+    }
+
 }
