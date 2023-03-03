@@ -1,14 +1,10 @@
 plugins {
     id("elegant.application")
     id("elegant.hilt.nav")
+    id("elegant.destinations")
 }
 
-kotlin {
-    sourceSets {
-        debug { kotlin.srcDir("build/generated/ksp/debug/kotlin") }
-        release { kotlin.srcDir("build/generated/ksp/release/kotlin") }
-    }
-}
+
 
 
 dependencies {

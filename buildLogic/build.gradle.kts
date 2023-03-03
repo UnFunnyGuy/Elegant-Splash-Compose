@@ -1,4 +1,7 @@
-plugins { `kotlin-dsl` }
+plugins {
+    `kotlin-dsl`
+    alias(libs.plugins.ksp)
+}
 
 val basePluginName = "elegant"
 val basePluginPackageName = "com.unfunnyguy.elegant.buildlogic"
@@ -9,6 +12,7 @@ repositories { // required by kotlin-dsl plugin dependencies
 }
 
 dependencies {
+    compileOnly(libs.symbol.processing.gradle.plugin)
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.android.gradlePlugin)
 }
@@ -26,6 +30,10 @@ gradlePlugin {
         register("compose-library-plugin") {
             id = "$basePluginName.compose"
             implementationClass = "$basePluginPackageName.ComposePlugin"
+        }
+        register("destinations-plugin") {
+            id = "$basePluginName.destinations"
+            implementationClass = "$basePluginPackageName.DestinationsPlugin"
         }
         register("hilt-plugin") {
             id = "$basePluginName.hilt"
