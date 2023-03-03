@@ -19,7 +19,7 @@ import com.unfunnyguy.elegant.core.ui.utils.extensions.parse
 fun PhotoCard(modifier: Modifier, url: String, placeHolderColor: String) {
     AsyncImage(
         modifier =
-            modifier.padding(15.dp).size(width = 300.dp, height = 450.dp).background(
+            modifier.padding(6.dp).size(width = 290.dp, height = 360.dp).background(
                 color = Color.parse(placeHolderColor),
                 shape = RoundedCornerShape(10.dp)
             ).clip(RoundedCornerShape(10.dp)),
