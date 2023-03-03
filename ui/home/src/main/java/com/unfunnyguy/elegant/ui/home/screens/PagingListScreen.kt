@@ -6,14 +6,12 @@ import androidx.compose.ui.Modifier
 import androidx.paging.compose.LazyPagingItems
 import com.unfunnyguy.elegant.core.model.domain.photo.Photo
 import com.unfunnyguy.elegant.core.ui.components.PhotoCard
-import com.unfunnyguy.elegant.core.ui.composables.ElegantPagingLazyColumn
+import com.unfunnyguy.elegant.core.ui.composables.ElegantPagingLazyVerticalGrid
 
 @Composable
-fun PhotoPagingList(
-    modifier: Modifier = Modifier,
-    walls: LazyPagingItems<Photo>
-) {
-    ElegantPagingLazyColumn(
+fun PhotoPagingList(modifier: Modifier = Modifier, walls: LazyPagingItems<Photo>) {
+
+    ElegantPagingLazyVerticalGrid(
         modifier = modifier,
         lazyListState = rememberLazyListState(),
         list = walls,
@@ -24,4 +22,3 @@ fun PhotoPagingList(
         }
     }
 }
-
